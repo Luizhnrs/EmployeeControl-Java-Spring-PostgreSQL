@@ -2,11 +2,15 @@ package com.example.demo.Controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@GetMapping("Employees")
+@RestController
+@RequestMapping("Employees")
 public class EmployeeController
 {
-    public void GetAll()
+    @GetMapping
+    public void getAll()
     {
 
     }
