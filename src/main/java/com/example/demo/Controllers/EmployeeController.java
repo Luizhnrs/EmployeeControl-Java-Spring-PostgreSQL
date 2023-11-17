@@ -4,9 +4,7 @@ import com.example.demo.Employees.Employee;
 import com.example.demo.Employees.EmployeeRepository;
 import com.example.demo.Employees.EmployeeResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,10 +14,14 @@ public class EmployeeController
 {
     @Autowired
     private EmployeeRepository repository;
+    @PostMapping
+    public void SaveEmployee(@RequestBody EmployeeRequestDTO data){
+
+    }
     @GetMapping
     public List<EmployeeResponseDTO> getAll()
     {
-        List<Employee> employeeList = repository.findAll().stream();
+        List<EmployeeResponseDTO> employeeList = repository.findAll().stream().map(EmployeeResponseDTO::new).toList();
         return employeeList;
     }
 }
