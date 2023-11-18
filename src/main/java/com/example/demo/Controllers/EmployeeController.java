@@ -17,11 +17,12 @@ public class EmployeeController
     @Autowired
     private EmployeeRepository repository;
     @PostMapping
-    public EmployeeResponseDTO SaveEmployee(@RequestBody EmployeeRequestDTO data){
+    public EmployeeResponseDTO saveEmployee(@RequestBody EmployeeRequestDTO data){
         Employee employeeData = new Employee(data);
         Employee savedEmployee = repository.save(employeeData);
         return new EmployeeResponseDTO(savedEmployee);
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
     public List<EmployeeResponseDTO> getAll()
     {
