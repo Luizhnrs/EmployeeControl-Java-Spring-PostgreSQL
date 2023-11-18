@@ -4,6 +4,7 @@ import com.example.demo.Employees.Employee;
 import com.example.demo.Employees.EmployeeRepository;
 import com.example.demo.Employees.EmployeeRequestDTO;
 import com.example.demo.Employees.EmployeeResponseDTO;
+import lombok.EqualsAndHashCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,8 @@ public class EmployeeController
     private EmployeeRepository repository;
     @PostMapping
     public void SaveEmployee(@RequestBody EmployeeRequestDTO data){
-
+        Employee employeeData = new Employee(data);
+        repository.save(data);
     }
     @GetMapping
     public List<EmployeeResponseDTO> getAll()
