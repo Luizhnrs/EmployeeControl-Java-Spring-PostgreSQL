@@ -20,8 +20,11 @@ public class Employee
     private String photo;
     private Integer remuneration;
 
-    public Employee (EmployeeRequestDTO data){
-
+    public Employee (EmployeeRequestDTO data)
+    {
+        this.photo = data.photo();
+        this.remuneration = data.remuneration();
+        this.name = data.name();
     }
 
 }
