@@ -17,10 +17,10 @@ public class EmployeeController
     @Autowired
     private EmployeeRepository repository;
     @PostMapping
-    public void SaveEmployee(@RequestBody EmployeeRequestDTO data){
+    public EmployeeResponseDTO SaveEmployee(@RequestBody EmployeeRequestDTO data){
         Employee employeeData = new Employee(data);
-        repository.save(employeeData);
-        return;
+        Employee savedEmployee = repository.save(employeeData);
+        return new EmployeeResponseDTO(savedEmployee);
     }
     @GetMapping
     public List<EmployeeResponseDTO> getAll()
