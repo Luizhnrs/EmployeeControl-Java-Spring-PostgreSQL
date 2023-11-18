@@ -19,4 +19,9 @@ public class Employee
     private String name;
     private String photo;
     private Integer remuneration;
+
+    public Employee (EmployeeRequestDTO data){
+
+    }
+
 }
