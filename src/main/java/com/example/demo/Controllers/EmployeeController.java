@@ -19,7 +19,8 @@ public class EmployeeController
     @PostMapping
     public void SaveEmployee(@RequestBody EmployeeRequestDTO data){
         Employee employeeData = new Employee(data);
-        repository.save(data);
+        repository.save(employeeData);
+        return;
     }
     @GetMapping
     public List<EmployeeResponseDTO> getAll()
