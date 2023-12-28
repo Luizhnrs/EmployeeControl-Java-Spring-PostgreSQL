@@ -1,5 +1,7 @@
 ﻿# EmployeeControl-Java-Spring-PostgreSQL
 
+An employee control system built in Java with spring boot
+
 Controle de Funcionários - Java Spring & PostgreSQL
 Este projeto é uma aplicação full stack para o controle de funcionários, desenvolvida utilizando Java Spring para o backend, PostgreSQL como banco de dados e Angular 17 para o frontend.
 
